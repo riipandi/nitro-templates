@@ -19,7 +19,7 @@
         "useDefineForClassFields": true,
         "baseUrl": ".",
         "paths": {
-            "#nitro": ["./.nitro/types/nitro-imports"],
+            "#nitro": ["./.output/.nitro/types/nitro-imports"],
             "#/*": ["./src/*"]
         }
     },

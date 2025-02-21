@@ -12,13 +12,13 @@ export default defineConfig({
         ssr: true,
         entryServer: './src/main.server.tsx',
         ssrBuildDir: resolve('.output/server'),
-        workspaceRoot: resolve('.output'),
         prerender: { routes: ['/'] },
       },
       {
         preset: 'node-server',
         compatibilityDate: '2025-02-21',
         publicAssets: [{ dir: resolve('public') }],
+        buildDir: resolve('.output/.nitro'),
         output: {
           dir: resolve('build'),
           publicDir: resolve('build/public'),
