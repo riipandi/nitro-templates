@@ -1,0 +1,39 @@
+{
+    "name": "nitro-react-ssr",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "start": "node .output/server/index.mjs",
+        "cleanup": "pnpm run --stream --parallel --color \"/cleanup:(?!data)/\"",
+        "cleanup:dev": "pnpm dlx rimraf build dist .{output,data,nitro,wrangler}",
+        "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules",
+        "update-deps": "npm-check-updates --configFileName .ncurc.json",
+        "check": "biome check . --write",
+        "format": "biome format . --write",
+        "lint": "biome lint . --write",
+        "prepare": "nitro prepare",
+        "typecheck": "tsc"
+    },
+    "dependencies": {
+        "consola": "^3.4.0",
+        "pathe": "^2.0.3",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "std-env": "^3.8.0"
+    },
+    "devDependencies": {
+        "@analogjs/vite-plugin-nitro": "^1.13.1",
+        "@biomejs/biome": "^1.9.4",
+        "@types/react": "^19.0.10",
+        "@types/react-dom": "^19.0.4",
+        "@vitejs/plugin-react": "^4.3.4",
+        "nitropack": "^2.10.4",
+        "npm-check-updates": "^17.1.14",
+        "typescript": "^5.7.3",
+        "vite": "^6.1.1"
+    },
+    "packageManager": "pnpm@10.4.1"
+}

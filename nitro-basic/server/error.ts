@@ -1,5 +1,5 @@
 import { process } from 'std-env'
-import type { AppConfig } from '~/types/config'
+import type { AppConfig } from '~~/app.config'
 
 export default defineNitroErrorHandler((error, event) => {
   const appConfig = useAppConfig(event) as AppConfig

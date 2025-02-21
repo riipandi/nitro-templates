@@ -46,3 +46,6 @@ dist/
 !.env.example
 compose.env*
 !compose.env.example
+
+# Sentry Config File
+.sentryclirc

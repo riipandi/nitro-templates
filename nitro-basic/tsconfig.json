@@ -6,6 +6,6 @@
         "noEmit": true, // Do not emit output (Nitro handles building)
         "skipLibCheck": true, // Skip type checking of all declaration files
         "verbatimModuleSyntax": true, // Do not transform imports/exports, enforced 'type-only' imports
-        "tsBuildInfoFile": "./node_modules/.tsbuildinfo"
+        "tsBuildInfoFile": ".nitro/tsbuildinfo"
     }
 }

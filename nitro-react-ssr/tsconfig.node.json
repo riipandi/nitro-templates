@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "composite": true,
+        "allowSyntheticDefaultImports": true,
+        "jsx": "preserve",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "skipLibCheck": true,
+        "tsBuildInfoFile": ".nitro/vite.tsbuildinfo"
+    },
+    "include": ["vite.config.ts"]
+}
