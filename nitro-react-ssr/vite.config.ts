@@ -11,19 +11,23 @@ export default defineConfig({
       {
         ssr: true,
         entryServer: './src/main.server.tsx',
-        ssrBuildDir: resolve('dist/server'),
+        ssrBuildDir: resolve('.output/server'),
+        workspaceRoot: resolve('.output'),
         prerender: { routes: ['/'] },
       },
       {
-        minify: isProduction,
+        preset: 'node-server',
+        compatibilityDate: '2025-02-21',
         publicAssets: [{ dir: resolve('public') }],
         output: {
-          dir: resolve('.output'),
-          publicDir: resolve('.output/public'),
+          dir: resolve('build'),
+          publicDir: resolve('build/public'),
+          serverDir: resolve('build/server'),
         },
+        minify: isProduction,
       }
     ),
   ],
   server: { port: 3000, host: false, strictPort: true },
-  build: { outDir: resolve('dist/client') },
+  build: { outDir: resolve('.output/client') },
 })

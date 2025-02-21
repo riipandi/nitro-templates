@@ -6,9 +6,9 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "start": "node .output/server/index.mjs",
+        "start": "node build/server/index.mjs",
         "cleanup": "pnpm run --stream --parallel --color \"/cleanup:(?!data)/\"",
-        "cleanup:dev": "pnpm dlx rimraf build dist .{output,data,nitro,wrangler}",
+        "cleanup:dev": "pnpm dlx rimraf build .{output,data,nitro,wrangler}",
         "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules",
         "update-deps": "npm-check-updates --configFileName .ncurc.json",
         "check": "biome check . --write",
