@@ -1,0 +1,58 @@
+{
+    "name": "nitro-lit-spa",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "nitro dev",
+        "build": "nitro build",
+        "start": "node build/server/index.mjs",
+        "check": "biome check . --write",
+        "format": "biome format . --write",
+        "lint": "biome lint . --write",
+        "prepare": "nitro prepare",
+        "postinstall": "pnpm approve-builds",
+        "cleanup": "pnpm run --stream --parallel --color \"/cleanup:(?!data)/\"",
+        "cleanup:dev": "pnpm dlx rimraf .{output,data,nitro,wrangler} build",
+        "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules",
+        "update-deps": "npm-check-updates --configFileName .ncurc.json",
+        "storybook": "storybook dev -p 6006",
+        "build:storybook": "storybook build",
+        "typecheck": "tsc -b --noEmit"
+    },
+    "dependencies": {
+        "@lit-labs/router": "^0.1.4",
+        "@noble/hashes": "^1.8.0",
+        "consola": "^3.4.2",
+        "lit": "^3.3.0",
+        "lucide": "^0.506.0",
+        "make-dir": "^5.0.0",
+        "ohash": "^2.0.11",
+        "std-env": "^3.9.0",
+        "urlpattern-polyfill": "^10.0.0"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
+        "@storybook/addon-essentials": "^8.6.12",
+        "@storybook/blocks": "^8.6.12",
+        "@storybook/experimental-addon-test": "^8.6.12",
+        "@storybook/test": "^8.6.12",
+        "@storybook/web-components": "^8.6.12",
+        "@storybook/web-components-vite": "^8.6.12",
+        "@types/node": "^22.15.3",
+        "browserslist": "^4.24.4",
+        "h3": "^1.15.3",
+        "lightningcss": "^1.29.3",
+        "nitropack": "^2.11.11",
+        "npm-check-updates": "^18.0.1",
+        "storybook": "^8.6.12",
+        "typescript": "^5.8.3",
+        "vite": "^6.3.4",
+        "vite-plugin-lit-lightningcss": "^0.0.3",
+        "vite-tsconfig-paths": "^5.1.4"
+    },
+    "packageManager": "pnpm@10.10.0",
+    "pnpm": {
+        "onlyBuiltDependencies": ["esbuild"]
+    }
+}

@@ -28,7 +28,6 @@ node_modules/
 _data/
 build/
 dist/
-temp/
 tmp/
 .data
 .cache
@@ -69,14 +68,14 @@ compose.env*
 *storybook.log
 storybook-static/
 
+# Miscellaneous
+pnpm-exec-summary.json
+slim.report.json
+/storage/
+
 # Terraform
 .terraform/
 .terraform.lock.hcl
 terraform.tfstate*
 terraform.tfvars*
 !terraform.tfvars.example
-
-# Miscellaneous
-pnpm-exec-summary.json
-slim.report.json
-/storage/

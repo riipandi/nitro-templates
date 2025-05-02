@@ -7,7 +7,7 @@ import appConfig from './app.config'
 const _console = createConsola({ defaults: { tag: 'nitro' } })
 
 export default defineNitroConfig({
-  compatibilityDate: '2025-04-11',
+  compatibilityDate: '2025-05-02',
   preset: 'node-server',
   serveStatic: 'node',
   appConfig: appConfig,
@@ -17,7 +17,6 @@ export default defineNitroConfig({
 
   publicAssets: [{ dir: resolve('public') }],
   serverAssets: [{ baseName: 'vite', dir: resolve('build/client/.vite') }],
-  compressPublicAssets: { gzip: isProduction, brotli: isProduction },
 
   output: {
     dir: resolve('build'),
@@ -60,6 +59,26 @@ export default defineNitroConfig({
   },
 
   devServer: { watch: ['server', 'client'] },
-  esbuild: { options: { jsx: 'automatic', target: 'ES2022' } },
-  typescript: { strict: true, generateTsConfig: false },
+  esbuild: { options: { target: 'ES2020' } },
+  typescript: {
+    strict: true,
+    tsConfig: {
+      compilerOptions: {
+        allowImportingTsExtensions: true,
+        experimentalDecorators: true,
+        isolatedModules: true,
+        lib: ['ES2020', 'DOM', 'DOM.Iterable'],
+        moduleDetection: 'force',
+        noFallthroughCasesInSwitch: true,
+        noUncheckedSideEffectImports: true,
+        noUnusedLocals: true,
+        noUnusedParameters: true,
+        target: 'ES2020',
+        useDefineForClassFields: false,
+        paths: {
+          '#/*': ['../../client/*'],
+        },
+      },
+    },
+  },
 })

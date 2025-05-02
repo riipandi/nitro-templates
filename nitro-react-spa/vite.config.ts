@@ -5,7 +5,7 @@ import { isProduction, isTest } from 'std-env'
 import { type Logger as ViteLogger, defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
-const _console = createConsola({ defaults: { tag: 'nitro' } })
+const _console = createConsola({ defaults: { tag: 'vite' } })
 
 const logger: ViteLogger = {
   info: (msg: string) => _console.info(msg),
