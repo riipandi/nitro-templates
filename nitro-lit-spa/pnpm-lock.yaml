@@ -11,6 +11,12 @@ importers:
       '@lit-labs/router':
         specifier: ^0.1.4
         version: 0.1.4
+      '@nanostores/lit':
+        specifier: ^0.2.2
+        version: 0.2.2(lit@3.3.0)(nanostores@1.0.1)
+      '@nanostores/persistent':
+        specifier: ^1.0.0
+        version: 1.0.0(nanostores@1.0.1)
       '@noble/hashes':
         specifier: ^1.8.0
         version: 1.8.0
@@ -26,6 +32,9 @@ importers:
       make-dir:
         specifier: ^5.0.0
         version: 5.0.0
+      nanostores:
+        specifier: ^1.0.1
+        version: 1.0.1
       ohash:
         specifier: ^2.0.11
         version: 2.0.11
@@ -689,6 +698,18 @@ packages:
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
+
+  '@nanostores/lit@0.2.2':
+    resolution: {integrity: sha512-EK01p3rdr1z9vhWn/vLBIvkgSRvfJTjuJwl1Os1a2K73LOIQEuojREAuo+aYIThCnURQsF3oNirll0tLaeW4Dg==}
+    peerDependencies:
+      lit: ^2.6.0 || ^3.0.0
+      nanostores: ^0.7 || ^0.8 || ^0.9 || ^0.10 || ^0.11
+
+  '@nanostores/persistent@1.0.0':
+    resolution: {integrity: sha512-iuucWTxcxSLwHvcxBTIAwofDc+KO7cw5EiQklAltJX6Ynx/CKTecOCUG76kF42yNnCZZQcMeuIcl99DkxekIig==}
+    engines: {node: ^20.0.0 || >=22.0.0}
+    peerDependencies:
+      nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^1.0.0
 
   '@netlify/binary-info@1.0.0':
     resolution: {integrity: sha512-4wMPu9iN3/HL97QblBsBay3E1etIciR84izI3U+4iALY+JHCrI+a2jO0qbAZ/nxKoegypYEaiiqWXylm+/zfrw==}
@@ -2636,6 +2657,10 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  nanostores@1.0.1:
+    resolution: {integrity: sha512-kNZ9xnoJYKg/AfxjrVL4SS0fKX++4awQReGqWnwTRHxeHGZ1FJFVgTqr/eMrNQdp0Tz7M7tG/TDaX8QfHDwVCw==}
+    engines: {node: ^20.0.0 || >=22.0.0}
+
   nested-error-stacks@2.1.1:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
 
@@ -4060,6 +4085,15 @@ snapshots:
       '@types/mdx': 2.0.13
       '@types/react': 19.1.2
       react: 19.1.0
+
+  '@nanostores/lit@0.2.2(lit@3.3.0)(nanostores@1.0.1)':
+    dependencies:
+      lit: 3.3.0
+      nanostores: 1.0.1
+
+  '@nanostores/persistent@1.0.0(nanostores@1.0.1)':
+    dependencies:
+      nanostores: 1.0.1
 
   '@netlify/binary-info@1.0.0': {}
 
@@ -6103,6 +6137,8 @@ snapshots:
   ms@2.1.3: {}
 
   nanoid@3.3.11: {}
+
+  nanostores@1.0.1: {}
 
   nested-error-stacks@2.1.1: {}
 
