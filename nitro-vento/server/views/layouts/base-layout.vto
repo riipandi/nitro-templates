@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ lang || 'en' }}" class="h-full">
+<head>
+  {{ include "partials/head.vto" }}
+  <title>{{ title ? title + ' - ' + (siteName || 'Vento App') : (siteName || 'Vento App') |> safe }}</title>
+</head>
+<body class="h-full bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
+    Skip to main content
+  </a>
+
+  {{ content }}
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+
+  {{# <!-- Additional scripts can be injected here -->
+  {{ if scripts }}
+    {{ for script of scripts }}
+      <script src="{{ script }}"></script>
+    {{ /for }}
+  {{ /if }} #}}
+
+  {{ if inlineScripts }}
+    <script>
+      {{ inlineScripts | safe }}
+    </script>
+  {{ /if }}
+</body>
+</html>

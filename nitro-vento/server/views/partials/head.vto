@@ -1,0 +1,28 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="{{ description || 'A modern web application built with Nitro and Vento' }}" />
+<meta name="author" content="{{ author || 'Your Name' }}" />
+
+<!-- CSRF Token if available -->
+{{ if csrfToken }}
+<meta name="csrf-token" content="{{ csrfToken }}" />
+{{ /if }}
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+<!-- CSS Framework - Tailwind CSS -->
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+<!-- Custom styles can be added here -->
+<style>
+  .fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>

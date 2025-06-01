@@ -1,0 +1,39 @@
+{
+    "name": "nitro-starter-vento",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "nitro dev",
+        "build": "nitro build",
+        "start": "node build/server/index.mjs",
+        "check": "biome check . --write",
+        "format": "biome format . --write",
+        "lint": "biome lint . --write",
+        "prepare": "nitro prepare",
+        "cleanup": "pnpm run --stream --parallel --color \"/cleanup:(?!data)/\"",
+        "cleanup:dev": "pnpm dlx rimraf .{output,data,nitro,wrangler} build",
+        "cleanup:deps": "pnpm dlx rimraf pnpm-lock.yaml node_modules",
+        "update-deps": "npm-check-updates --configFileName .ncurc.json",
+        "typecheck": "tsc -b --noEmit"
+    },
+    "dependencies": {
+        "@noble/hashes": "^1.8.0",
+        "consola": "^3.4.2",
+        "html-minifier": "^4.0.0",
+        "ohash": "^2.0.11",
+        "std-env": "^3.9.0",
+        "ufo": "^1.6.1",
+        "ventojs": "^1.13.1"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
+        "@types/html-minifier": "^4.0.5",
+        "h3": "^1.15.3",
+        "make-dir": "^5.0.0",
+        "nitropack": "^2.11.12",
+        "npm-check-updates": "^18.0.1",
+        "typescript": "^5.8.3"
+    },
+    "packageManager": "pnpm@10.11.0"
+}
