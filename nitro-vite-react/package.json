@@ -1,0 +1,42 @@
+{
+    "name": "nitro-vite-react",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "preview": "vite preview",
+        "check": "biome check . --write",
+        "format": "biome format . --write",
+        "lint": "biome lint . --write",
+        "cleanup": "pnpm run --stream --parallel --color \"/cleanup:(?!data)/\"",
+        "cleanup:dev": "pnpm dlx del-cli .{output,data,nitro,wrangler} build",
+        "cleanup:deps": "pnpm dlx del-cli pnpm-lock.yaml node_modules",
+        "update-deps": "npm-check-updates --configFileName .ncurc.json",
+        "typecheck": "tsc -b --noEmit"
+    },
+    "dependencies": {
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^2.3.7",
+        "@tailwindcss/vite": "^4.1.17",
+        "@types/node": "^24.10.1",
+        "@types/react": "^19.2.6",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^5.1.1",
+        "nitro": "3.0.1-alpha.1",
+        "npm-check-updates": "^19.1.2",
+        "tailwindcss": "^4.1.17",
+        "typescript": "~5.9.3",
+        "vite": "npm:rolldown-vite@7.2.7"
+    },
+    "packageManager": "pnpm@10.23.0",
+    "pnpm": {
+        "overrides": {
+            "vite": "npm:rolldown-vite@7.2.7"
+        }
+    }
+}
